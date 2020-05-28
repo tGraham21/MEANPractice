@@ -10,7 +10,6 @@ export class PostCreateComponent {
   enteredValue = ' ';
   onAddPost() {
     this.newPost = this.enteredValue;
-
   }
 
 }
