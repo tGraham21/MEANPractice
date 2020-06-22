@@ -1,8 +1,7 @@
 const express = require('express');
 
-const router = express.Router();
-
 const Post = require("../models/post");
+const router = express.Router();
 
 router.post("", (req, res, next) => {
   const post = new Post({
@@ -24,8 +23,8 @@ router.put("/:id", (req, res, next) => {
     title: req.body.title,
     content: req.body.content
   });
-  Post.updateOne({_id: req.params.id}, post).then(result =>{
-    res.status(200).json({message: 'Update Successful'});
+  Post.updateOne({ _id: req.params.id }, post).then(result => {
+    res.status(200).json({ message: "Update successful!" });
   });
 });
 

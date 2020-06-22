@@ -12,9 +12,9 @@ import { Post } from '../post.model';
   styleUrls: ['./post-create.component.css']
 })
 export class PostCreateComponent implements OnInit{
-  enteredContent = "";
   enteredTitle = "";
-  post:  Post;
+  enteredContent = "";
+  post: Post;
   isLoading = false;
   private mode = 'create';
   private postId: string;
@@ -23,9 +23,9 @@ export class PostCreateComponent implements OnInit{
 
   ngOnInit() {
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
-      if(paramMap.has('postId')){  // defined in app-routing,module.ts
-        this.mode = 'edit';
-        this.postId = paramMap.get('postId');
+      if(paramMap.has("postId")){  // defined in app-routing,module.ts
+        this.mode = "edit";
+        this.postId = paramMap.get("postId");
         this.isLoading = true;
         this.postsService.getPost(this.postId).subscribe(postData => {
           this.isLoading = false;
